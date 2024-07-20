@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python Quiz Test</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: hsl(273, 59%, 50%);
+    }
+
+    .container {
+        width: 50%;
+        margin: 100px auto;
+        text-align: center;
+        font-family: cursive;
+        font-size: 35px;
+        
+    }
+
+    h1 {
+        
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, rgb(224, 25, 75), violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+        font-family:cursive;
+    }
+
+    .buttons {
+        margin-top: 30px;
+        color: rgba(180, 20, 42, 0.267);
+    }
+
+    button {
+        padding: 4px 10px;
+        margin: 20px auto;
+        border: none;
+        border-radius: 5px;
+        background-color: #e8eb15;
+        color: #000f09;
+        font-size: 30px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-family: cursive;
+        display: none; 
+        align-items: center;/* Hide the button by default */
+    }
+
+    button:hover {
+        background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Rules for Python Quiz Test</h1>
+    <ul id="quizRules">
+        Each question carries one mark.<br><br>
+        There is no negative marking.<br><br>
+        Time duration: 30 minutes.
+    </ul>
+    <input type="checkbox" id="agreeRules"> I agree to the rules<br>
+    <button id="startQuiz">Start Python Test</button>
+</div>
+
+<script>
+    document.getElementById('agreeRules').addEventListener('click', function() {
+        var startButton = document.getElementById('startQuiz');
+        startButton.style.display = this.checked ? 'block' : 'none';
+    });
+    document.getElementById('startQuiz').addEventListener('click', function() {
+        window.location.href = 'python questions.html';
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <h1>AMS QUIZ</h1>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: hsl(273, 59%, 50%);
+        }
+        .container {
+            width: 40%;
+            margin: 180px auto;
+            padding: 15px;
+            background: linear-gradient(to right, #10c9c9, #bf0cd6, #68c215, #93e70b);
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        h1 {
+            text-align: center;
+            background: linear-gradient(to right, red, orange, yellow, green);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+             font-family: cursive;
+             
+        }
+        .form-group {
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: cursive;
+        
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            color: darkred;
+            font-family: cursive; /* Set label color to dark red */
+        }
+        
+        input[type="text"], input[type="email"], textarea {
+            width: 50%;
+            padding: 10px;
+            border: 3px solid #4e0b9b;
+            border-radius: 5px;
+            font-family: cursive;
+            
+            mask-border-width: 30%;
+        }
+        textarea {
+            resize: vertical;
+        }
+        input[type="submit"] {
+            width: 30%; /* Adjusted button width */
+            padding: 10px;
+            border: 3px solid #4e0b9b;
+            border-radius: 5px;
+            background: linear-gradient(to right, #ff6600, #0bcfd6, #257744, #ff0000);
+            color: hsla(303, 91%, 9%, 0.541);
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            text-align:center ;
+            margin: 0 auto; /* Center align the button */
+            display: block; /* Make it a block element */
+            font-weight: bold; 
+            font-family: cursive;
+            /* Bold the button text */
+        }
+        input[type="submit"]:hover {
+            background: linear-gradient(to right, #1bc9c9, #cc3300, #5ccf19, #ff6600);
+            text-shadow: #e8f0eb;
+            text-decoration-line:initial;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+        .image-container {
+            position: absolute;
+            top: -170px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px; /* Adjust the width as needed */
+            height: 160px; /* Adjust the height as needed */
+            border-radius: 20%;
+            overflow: hidden;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 60px;
+            top: 100%;
+            text-decoration: aqua;
+        }
+        .login-link a {
+            text-decoration: aqua;
+            color: rgb(130, 216, 205);
+        }
+        .mobile
+        {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: large;
+            text-align: center;
+            font-weight: bold;
+            font-style: italic;
+            color: #f7f4f6c0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="image-container">
+        <img src="https://altc.alt.ac.uk/blog/wp-content/uploads/sites/1112/2022/08/Blog-Cover-Guidlines-707x409.png" alt="Placeholder Image">
+    </div>
+    <h1>Contact Us</h1>
+    
+    <form id="contactForm" method="post" action="contactus.php"> 
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" >
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$">
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" ></textarea>
+        </div>
+        <div class="mobile">
+            <p>Our mobile no: 9789764083</p>
+        </div>
+        <input type="submit" value="Submit">
+
+    </form>
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission behavior
+            alert("Message sent successfully!"); // Display a success message
+        });
+    </script>
+</div>
+
+</body>
+</html>

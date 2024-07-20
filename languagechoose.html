@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: hsl(273, 59%, 50%);
+        }
+
+        .container {
+            width: 50%;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: rgb(25, 201, 192);
+            font-family: cursive;
+        }
+
+        .username-input {
+            margin-bottom: 20px;
+            font-family: cursive;
+            font-weight: 200;
+            font-style: italic;
+            font-weight: bold ;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+            font-size: 16px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            color: coral;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #cbeb15;
+            color: #dd0723;
+            font-size: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-family: cursive;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the User Dashboard</h1>
+        <form id="usernameForm">
+            <div class="username-input">
+                <label for="username">How We Call you dear..</label><br>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="buttons">
+                <button id="cButton">C</button>
+                <button id="cppButton">C++</button>
+                <button id="pythonButton">Python</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        // Function to store username in session storage
+        function storeUsername() {
+            var username = document.getElementById("username").value;
+            sessionStorage.setItem("username", username);
+        }
+
+        // Add event listener to the form submission
+        document.getElementById("usernameForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            storeUsername(); 
+            
+            // Redirect based on button click
+            var language = event.submitter.id;
+            if (language === "cButton") {
+                window.location.href = "cquestions.php";
+            } else if (language === "cppButton") {
+                window.location.href = "c++questions.php";
+            } else if (language === "pythonButton") {
+                window.location.href = "pythonquestions.php";
+            }
+        });
+    </script>
+   
+</body>
+</html>
